@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dq12gye11cy4i"]
+
+[ext_resource type="Script" uid="uid://b6da77emn510b" path="res://scripts/duck.gd" id="1_1jmxk"]
+[ext_resource type="Texture2D" uid="uid://c3gix4coeahis" path="res://dummies/sprites/duck.png" id="1_vac06"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1jmxk"]
+radius = 77.54031
+
+[node name="Duck" type="Area2D" unique_id=2058928155]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_1jmxk")
+move_interval_min = 5.0
+move_interval_max = 15.0
+move_duration_min = 1.0
+move_duration_max = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1903769529]
+texture = ExtResource("1_vac06")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=811777700]
+position = Vector2(-0.5, 2.5)
+shape = SubResource("CircleShape2D_1jmxk")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=161057009]
+show_rect = false

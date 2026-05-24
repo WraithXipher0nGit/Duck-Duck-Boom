@@ -3,12 +3,10 @@ extends Node2D
 
 @export var can_shoot: bool = true
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	look_at(get_global_mouse_position())
 
@@ -26,7 +24,7 @@ func spawn_bullet():
 		bullet_instance.global_position = muzzle.global_position
 		bullet_instance.rotation = muzzle.global_rotation
 		get_tree().current_scene.add_child(bullet_instance)
-		#fire rate, comment out if not needed
+
 		can_shoot = false
 		await get_tree().create_timer(0.1).timeout
 		can_shoot = true

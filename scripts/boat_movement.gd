@@ -4,17 +4,17 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+@export var forward_speed = 100
+
 
 func _physics_process(delta: float) -> void:
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("Left", "Right")
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
+	velocity.y = -forward_speed
 	move_and_slide()
 	
-	position.x = clampf(position.x, 56, 1096)
+	position.x = clampf(position.x, -960, 960)

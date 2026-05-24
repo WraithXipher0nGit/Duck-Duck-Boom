@@ -1,21 +1,21 @@
 [gd_scene format=3 uid="uid://b7g0j6bnu20v7"]
 
-[ext_resource type="Texture2D" uid="uid://cc6egfscbfi5l" path="res://dummies/sprites/player.png" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://dl0a6bwsi61ak" path="res://Prototype stuff/boat_movement.gd" id="1_onrkg"]
-[ext_resource type="Script" uid="uid://d1j4akd550b67" path="res://Prototype stuff/player_shoot.gd" id="2_hqtel"]
-[ext_resource type="PackedScene" uid="uid://c6t5fdfvvh4sa" path="res://Prototype stuff/bullet.tscn" id="4_2hs0m"]
-[ext_resource type="Texture2D" uid="uid://ejawn8lxce6" path="res://icon.svg" id="4_sweqy"]
+[ext_resource type="Script" uid="uid://dl0a6bwsi61ak" path="res://scripts/boat_movement.gd" id="1_p47bc"]
+[ext_resource type="Texture2D" uid="uid://cc6egfscbfi5l" path="res://dummies/sprites/player.png" id="2_75vfm"]
+[ext_resource type="Script" uid="uid://d1j4akd550b67" path="res://scripts/player_shoot.gd" id="3_0owmy"]
+[ext_resource type="PackedScene" uid="uid://c6t5fdfvvh4sa" path="res://scenes/player/bullet.tscn" id="4_qek5x"]
+[ext_resource type="Texture2D" uid="uid://ejawn8lxce6" path="res://icon.svg" id="5_5gtgg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(112, 74)
 
 [node name="Player" type="CharacterBody2D" unique_id=232877882]
-script = ExtResource("1_onrkg")
+script = ExtResource("1_p47bc")
 
 [node name="Player_Sprite" type="Sprite2D" parent="." unique_id=830282126]
 position = Vector2(9.536743e-07, 9.536743e-07)
 scale = Vector2(0.62890625, 0.62890625)
-texture = ExtResource("1_4flbx")
+texture = ExtResource("2_75vfm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1215587459]
 position = Vector2(0, 10)
@@ -24,8 +24,8 @@ shape = SubResource("RectangleShape2D_onrkg")
 [node name="Node2D" type="Node2D" parent="." unique_id=297626160]
 position = Vector2(5.684342e-14, 5.684342e-14)
 scale = Vector2(0.99999994, 0.99999994)
-script = ExtResource("2_hqtel")
-bullet = ExtResource("4_2hs0m")
+script = ExtResource("3_0owmy")
+bullet = ExtResource("4_qek5x")
 
 [node name="Placeholder" type="Node2D" parent="Node2D" unique_id=727634846]
 
@@ -33,13 +33,13 @@ bullet = ExtResource("4_2hs0m")
 modulate = Color(0, 0, 0, 1)
 position = Vector2(93.00001, 8.000001)
 scale = Vector2(0.45312497, 0.078125)
-texture = ExtResource("4_sweqy")
+texture = ExtResource("5_5gtgg")
 
 [node name="Sprite2d" type="Sprite2D" parent="Node2D/Placeholder" unique_id=1019748624]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(62.399998, 8.499999)
 scale = Vector2(0.17812498, 0.1484375)
-texture = ExtResource("4_sweqy")
+texture = ExtResource("5_5gtgg")
 
 [node name="Marker2D" type="Marker2D" parent="Node2D" unique_id=1271051275]
 position = Vector2(121, 9)
