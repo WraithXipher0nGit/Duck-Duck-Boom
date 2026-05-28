@@ -6,7 +6,7 @@ const TILE_SIZE: float = 1920.0 / 7.0  # ≈ 274
 
 const GRID_ORIGIN: Vector2 = Vector2(-3.0 * TILE_SIZE, -1.5 * TILE_SIZE)
 
-@export var debug_draw: bool = true
+@export var debug_draw: bool = false
 @export var draw_extent_rows: int = 6
 
 var _occupancy: Dictionary = {}

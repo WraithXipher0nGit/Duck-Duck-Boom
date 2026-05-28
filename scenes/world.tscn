@@ -1,8 +1,37 @@
-[gd_scene format=3 uid="uid://sg0v6c1kjp0n"]
+[gd_scene format=3 uid="uid://bxq3wls0dj8ek"]
 
 [ext_resource type="Script" uid="uid://33wcv44eoc31" path="res://scripts/spawner.gd" id="1_nnsk1"]
+[ext_resource type="Script" uid="uid://tyrgubmwj7n7" path="res://scripts/camera_scroll.gd" id="2_k0juu"]
+[ext_resource type="PackedScene" uid="uid://b7g0j6bnu20v7" path="res://scenes/player/player.tscn" id="3_71j4m"]
+[ext_resource type="Script" uid="uid://bg0aymiusnh1u" path="res://scripts/spawn_grid.gd" id="4_qfnet"]
+[ext_resource type="PackedScene" uid="uid://bhh3uy7k03hgi" path="res://scenes/obstacles/obstacle.tscn" id="5_qfnet"]
+[ext_resource type="PackedScene" uid="uid://dq12gye11cy4i" path="res://scenes/ducks/duck.tscn" id="6_i7141"]
+[ext_resource type="Texture2D" uid="uid://cfkb4f4bg62pk" path="res://dummies/sprites/water-texture.png" id="7_i7141"]
 
-[node name="World" type="Node2D" unique_id=802891821]
+[node name="World" type="Node2D" unique_id=1278491355]
 
-[node name="Spawner" type="Node" parent="." unique_id=142559705]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2096979247]
+script = ExtResource("2_k0juu")
+
+[node name="SpawnGrid" type="Node2D" parent="." unique_id=1050416477]
+script = ExtResource("4_qfnet")
+
+[node name="Entities" type="Node2D" parent="." unique_id=1659801012 groups=["entities"]]
+
+[node name="Player" parent="." unique_id=232877882 instance=ExtResource("3_71j4m")]
+position = Vector2(0, 465)
+
+[node name="Spawner" type="Node" parent="." unique_id=419916912]
 script = ExtResource("1_nnsk1")
+obstacle_scene = ExtResource("5_qfnet")
+duck_scene = ExtResource("6_i7141")
+
+[node name="Parallax2D" type="ParallaxBackground" parent="." unique_id=413745298]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Parallax2D" unique_id=1368965208]
+motion_mirroring = Vector2(0, 3968)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D/ParallaxLayer" unique_id=2103859207]
+texture_filter = 2
+texture_repeat = 2
+texture = ExtResource("7_i7141")

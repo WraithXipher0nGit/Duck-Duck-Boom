@@ -13,12 +13,10 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		EventBus.emit_signal("player_shot")
-		print("player shot!")
 		spawn_bullet()
 
 func spawn_bullet():
 	if can_shoot == true:
-		print("bullet spawned!")
 		var muzzle = $Marker2D
 		var bullet_instance = bullet.instantiate()
 		bullet_instance.global_position = muzzle.global_position
