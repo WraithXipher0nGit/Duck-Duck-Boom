@@ -18,3 +18,13 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	position.x = clampf(position.x, -960, 960)
+	
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("obstacles"):
+		EventBus.obstacle_collided
+		print("obstacle collided")
+		area.queue_free()
+	else:
+		pass

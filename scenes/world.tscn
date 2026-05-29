@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bxq3wls0dj8ek"]
+[gd_scene format=3 uid="uid://sg0v6c1kjp0n"]
 
 [ext_resource type="Script" uid="uid://33wcv44eoc31" path="res://scripts/spawner.gd" id="1_nnsk1"]
 [ext_resource type="Script" uid="uid://tyrgubmwj7n7" path="res://scripts/camera_scroll.gd" id="2_k0juu"]
