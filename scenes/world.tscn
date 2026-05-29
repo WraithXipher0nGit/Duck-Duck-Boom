@@ -1,17 +1,14 @@
 [gd_scene format=3 uid="uid://sg0v6c1kjp0n"]
 
 [ext_resource type="Script" uid="uid://33wcv44eoc31" path="res://scripts/spawner.gd" id="1_nnsk1"]
-[ext_resource type="Script" uid="uid://tyrgubmwj7n7" path="res://scripts/camera_scroll.gd" id="2_k0juu"]
 [ext_resource type="PackedScene" uid="uid://b7g0j6bnu20v7" path="res://scenes/player/player.tscn" id="3_71j4m"]
+[ext_resource type="Script" uid="uid://dssvulgta1kge" path="res://scripts/camera_shake.gd" id="3_i7141"]
 [ext_resource type="Script" uid="uid://bg0aymiusnh1u" path="res://scripts/spawn_grid.gd" id="4_qfnet"]
 [ext_resource type="PackedScene" uid="uid://bhh3uy7k03hgi" path="res://scenes/obstacles/obstacle.tscn" id="5_qfnet"]
 [ext_resource type="PackedScene" uid="uid://dq12gye11cy4i" path="res://scenes/ducks/duck.tscn" id="6_i7141"]
 [ext_resource type="Texture2D" uid="uid://r4nwarjbm1a6" path="res://assets/sprites/Water BG_V2.png" id="7_i7141"]
 
 [node name="World" type="Node2D" unique_id=1278491355]
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2096979247]
-script = ExtResource("2_k0juu")
 
 [node name="SpawnGrid" type="Node2D" parent="." unique_id=1050416477]
 script = ExtResource("4_qfnet")
@@ -20,6 +17,13 @@ script = ExtResource("4_qfnet")
 
 [node name="Player" parent="." unique_id=232877882 instance=ExtResource("3_71j4m")]
 position = Vector2(0, 465)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=2096979247]
+position = Vector2(0, -465)
+drag_horizontal_enabled = true
+drag_left_margin = 1.0
+drag_right_margin = 1.0
+script = ExtResource("3_i7141")
 
 [node name="Spawner" type="Node" parent="." unique_id=419916912]
 script = ExtResource("1_nnsk1")

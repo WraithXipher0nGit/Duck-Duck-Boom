@@ -83,15 +83,15 @@ func _start_move(new_row: int, new_col: int) -> void:
 	var target_pos = grid.tile_to_world(new_row, new_col) + new_offset
 	
 	if col_delta < 0:
-		sprite.flip_h = true
-	elif col_delta > 0:
 		sprite.flip_h = false
+	elif col_delta > 0:
+		sprite.flip_h = true
 	else:
 		var offset_dx = new_offset.x - _last_offset.x
 		if offset_dx < 0:
-			sprite.flip_h = true
-		elif offset_dx > 0:
 			sprite.flip_h = false
+		elif offset_dx > 0:
+			sprite.flip_h = true
 	
 	_last_offset = new_offset
 	

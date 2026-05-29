@@ -12,38 +12,38 @@ size = Vector2(112, 74)
 [node name="Player" type="CharacterBody2D" unique_id=232877882]
 script = ExtResource("1_p47bc")
 
-[node name="Player_Sprite" type="Sprite2D" parent="." unique_id=830282126]
-position = Vector2(9.536743e-07, 9.536743e-07)
-scale = Vector2(0.62890625, 0.62890625)
-texture = ExtResource("2_75vfm")
-
 [node name="Hitbox" type="Area2D" parent="." unique_id=340450864]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1215587459]
 position = Vector2(0, 10)
 shape = SubResource("RectangleShape2D_onrkg")
 
-[node name="Node2D" type="Node2D" parent="." unique_id=297626160]
+[node name="Sprites" type="Node2D" parent="." unique_id=748939521]
+
+[node name="Node2D" type="Node2D" parent="Sprites" unique_id=297626160]
 position = Vector2(5.684342e-14, 5.684342e-14)
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("3_0owmy")
 bullet = ExtResource("4_qek5x")
 
-[node name="Placeholder" type="Node2D" parent="Node2D" unique_id=727634846]
+[node name="Placeholder" type="Node2D" parent="Sprites/Node2D" unique_id=727634846]
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Placeholder" unique_id=848432851]
+[node name="Weapon_Shaft_Sprite" type="Sprite2D" parent="Sprites/Node2D/Placeholder" unique_id=848432851]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(93.00001, 8.000001)
 scale = Vector2(0.45312497, 0.078125)
 texture = ExtResource("5_5gtgg")
 
-[node name="Sprite2d" type="Sprite2D" parent="Node2D/Placeholder" unique_id=1019748624]
+[node name="Weapon_Base_Sprite" type="Sprite2D" parent="Sprites/Node2D/Placeholder" unique_id=1019748624]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(62.399998, 8.499999)
 scale = Vector2(0.17812498, 0.1484375)
 texture = ExtResource("5_5gtgg")
 
-[node name="Marker2D" type="Marker2D" parent="Node2D" unique_id=1271051275]
+[node name="Marker2D" type="Marker2D" parent="Sprites/Node2D" unique_id=1271051275]
 position = Vector2(121, 9)
 
-[connection signal="area_entered" from="Hitbox" to="." method="_on_area_entered"]
+[node name="Player_Sprite" type="Sprite2D" parent="Sprites" unique_id=830282126]
+position = Vector2(9.536743e-07, 9.536743e-07)
+scale = Vector2(0.62890625, 0.62890625)
+texture = ExtResource("2_75vfm")
