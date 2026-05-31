@@ -2,11 +2,11 @@ extends Node
 
 # Preload sounds at startup
 @export var sounds: Dictionary = {
-	"shoot": preload("res://dummies/audio/shooting.wav"),
-	"duck_death": preload("res://dummies/audio/quack.wav"),
+	"shoot": preload("res://assets/audio/sfx/PlayerFire.wav"),
+	"duck_death": preload("res://assets/audio/sfx/DuckHit.wav"),
 	"player_take_damage": preload("res://dummies/audio/player_take_damage.wav"),
 	"game_over": preload("res://dummies/audio/player_death.wav"),
-	"reload": preload("res://dummies/audio/reload.wav")
+	"reload": preload("res://assets/audio/sfx/Reload.wav")
 }
 
 
