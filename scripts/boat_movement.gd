@@ -6,8 +6,8 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-@export var forward_speed = 100
-@export var invulnerable_duration: float = 15.0
+@export var forward_speed = 300
+@export var invulnerable_duration: float = 2.0
 
 var _is_invulnerable: bool = false
 

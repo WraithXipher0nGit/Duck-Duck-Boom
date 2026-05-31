@@ -12,7 +12,10 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
-		EventBus.emit_signal("player_shot")
+		var stub: Vector2 = Vector2()
+		if GameManager.bullets <= 0:
+			return
+		EventBus.player_shot.emit(stub, stub)
 		spawn_bullet()
 
 func spawn_bullet():

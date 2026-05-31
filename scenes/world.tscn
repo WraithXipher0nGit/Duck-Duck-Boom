@@ -7,6 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://bhh3uy7k03hgi" path="res://scenes/obstacles/obstacle.tscn" id="5_qfnet"]
 [ext_resource type="PackedScene" uid="uid://dq12gye11cy4i" path="res://scenes/ducks/duck.tscn" id="6_i7141"]
 [ext_resource type="Texture2D" uid="uid://r4nwarjbm1a6" path="res://assets/sprites/Water BG_V2.png" id="7_i7141"]
+[ext_resource type="PackedScene" uid="uid://beqvsxvodq0df" path="res://scenes/UI/HUD.tscn" id="8_4mrxx"]
+[ext_resource type="Texture2D" uid="uid://cvqv8rjekyhoy" path="res://dummies/sprites/heart.png" id="9_w7kh3"]
+[ext_resource type="Texture2D" uid="uid://dsroeh0hh1vt7" path="res://dummies/sprites/heart_lost.png" id="10_e3hyu"]
+[ext_resource type="Texture2D" uid="uid://bcchmjqaq16qx" path="res://dummies/sprites/bullet_HUD.png" id="11_q5onr"]
+[ext_resource type="Texture2D" uid="uid://bg5h5l58rsjww" path="res://dummies/sprites/bullet_HUD_lost.png" id="12_jhx03"]
 
 [node name="World" type="Node2D" unique_id=1278491355]
 
@@ -39,3 +44,9 @@ motion_mirroring = Vector2(0, 4000)
 texture_filter = 2
 texture_repeat = 2
 texture = ExtResource("7_i7141")
+
+[node name="Hud" parent="." unique_id=519716865 instance=ExtResource("8_4mrxx")]
+heart_full = ExtResource("9_w7kh3")
+heart_empty = ExtResource("10_e3hyu")
+bullet_full = ExtResource("11_q5onr")
+bullet_empty = ExtResource("12_jhx03")

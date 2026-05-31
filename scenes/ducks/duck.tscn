@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dq12gye11cy4i"]
 
 [ext_resource type="Script" uid="uid://b6da77emn510b" path="res://scripts/duck.gd" id="1_1jmxk"]
-[ext_resource type="Texture2D" uid="uid://bwheyopfrl2lq" path="res://assets/sprites/Duck Sprites_Muppet.png" id="2_1jmxk"]
+[ext_resource type="Texture2D" uid="uid://clcqpnvkvmqqk" path="res://assets/sprites/Duck Sprites_Muppet_1280x1280_unfinished.png" id="2_1jmxk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1jmxk"]
 radius = 49.56309
@@ -12,6 +12,7 @@ collision_mask = 8
 script = ExtResource("1_1jmxk")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1903769529]
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_1jmxk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=811777700]

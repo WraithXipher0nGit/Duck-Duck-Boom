@@ -18,3 +18,7 @@ signal game_over
 
 # after game over -> player chooses "play again"
 signal game_restarted
+
+signal score_changed(score)
+
+signal reloaded
