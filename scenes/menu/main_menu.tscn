@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://damsloot1atw4"]
+
+[ext_resource type="Texture2D" uid="uid://c5ig1eq3ysvn3" path="res://dummies/sprites/Yellow.png" id="1_7vrkn"]
+[ext_resource type="Script" uid="uid://bea2f4a1n73x5" path="res://scenes/menu/main_menu.gd" id="1_fu7sn"]
+[ext_resource type="FontFile" uid="uid://0bdloffpmew5" path="res://dummies/fonts/Hello Larry.otf" id="2_fu7sn"]
+[ext_resource type="PackedScene" uid="uid://d23yr8apcwjo0" path="res://scenes/menu/menu_player.tscn" id="4_jix8l"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jix8l"]
+texture = ExtResource("1_7vrkn")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhts7"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
+bg_color = Color(0.5354206, 0.5354211, 0.53542054, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu7sn"]
+bg_color = Color(0.7750634, 0.7750634, 0.7750634, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rhts7"]
+load_path = "res://.godot/imported/duck.png-036648e15708f474c54ccf23e41e23e2.ctex"
+
+[node name="MainMenu" type="Control" unique_id=507737122]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fu7sn")
+
+[node name="Panel" type="Panel" parent="." unique_id=749780267]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_jix8l")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1958297377]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -727.0
+offset_top = -96.0
+offset_right = -120.39624
+offset_bottom = 377.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=1316352829]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+text = "Play"
+icon = SubResource("CompressedTexture2D_rhts7")
+expand_icon = true
+
+[node name="StatsButton" type="Button" parent="VBoxContainer" unique_id=1626858668]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+text = "Stats"
+icon = SubResource("CompressedTexture2D_rhts7")
+expand_icon = true
+
+[node name="EncyclopediaButton" type="Button" parent="VBoxContainer" unique_id=80539637]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+text = "Encyclopedia"
+icon = SubResource("CompressedTexture2D_rhts7")
+expand_icon = true
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer" unique_id=2122633946]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+text = "Options"
+icon = SubResource("CompressedTexture2D_rhts7")
+expand_icon = true
+
+[node name="ExitButton" type="Button" parent="VBoxContainer" unique_id=1225608211]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+text = "Exit"
+icon = SubResource("CompressedTexture2D_rhts7")
+expand_icon = true
+
+[node name="Label" type="Label" parent="." unique_id=1971382998]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -551.61444
+offset_top = -446.0
+offset_right = 551.6145
+offset_bottom = -210.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
+theme_override_colors/font_outline_color = Color(0.6028429, 0.6028429, 0.602843, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_fu7sn")
+theme_override_font_sizes/font_size = 120
+text = "DUCK DUCK BOOM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Menu_Player" parent="." unique_id=232877882 instance=ExtResource("4_jix8l")]
+unique_name_in_owner = true
+position = Vector2(1335, 704)
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/StatsButton" to="." method="_on_stats_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/EncyclopediaButton" to="." method="_on_encyclopedia_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/ExitButton" to="Menu_Player" method="_on_exit_button_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/ExitButton" to="Menu_Player" method="_on_exit_button_mouse_exited"]

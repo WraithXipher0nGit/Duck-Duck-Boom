@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://d23yr8apcwjo0"]
+
+[ext_resource type="Script" uid="uid://1opjyxxln4fv" path="res://scenes/menu/menu_player.gd" id="1_sivx8"]
+[ext_resource type="Script" uid="uid://tgwh4e23lgj8" path="res://scenes/player/menu_player_muzzle.gd" id="2_abfv5"]
+[ext_resource type="Texture2D" uid="uid://ejawn8lxce6" path="res://icon.svg" id="4_km6mb"]
+[ext_resource type="Texture2D" uid="uid://cc6egfscbfi5l" path="res://dummies/sprites/player.png" id="5_v0uok"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+size = Vector2(112, 74)
+
+[node name="Player" type="CharacterBody2D" unique_id=232877882]
+script = ExtResource("1_sivx8")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=340450864]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1215587459]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_onrkg")
+
+[node name="Sprites" type="Node2D" parent="." unique_id=748939521]
+
+[node name="Node2D" type="Node2D" parent="Sprites" unique_id=297626160]
+position = Vector2(3.8146973e-06, 2.019484e-28)
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("2_abfv5")
+
+[node name="Placeholder" type="Node2D" parent="Sprites/Node2D" unique_id=727634846]
+
+[node name="Weapon_Shaft_Sprite" type="Sprite2D" parent="Sprites/Node2D/Placeholder" unique_id=848432851]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(176.00002, 16)
+scale = Vector2(0.625, 0.17241381)
+texture = ExtResource("4_km6mb")
+
+[node name="Weapon_Base_Sprite" type="Sprite2D" parent="Sprites/Node2D/Placeholder" unique_id=1019748624]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(128.00002, 16.000002)
+scale = Vector2(0.35156256, 0.29296884)
+texture = ExtResource("4_km6mb")
+
+[node name="Marker2D" type="Marker2D" parent="Sprites/Node2D" unique_id=1271051275]
+position = Vector2(216.00002, 16)
+
+[node name="Player_Sprite" type="Sprite2D" parent="Sprites" unique_id=830282126]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(1.017578, 1.017578)
+texture = ExtResource("5_v0uok")
