@@ -41,8 +41,10 @@ func _restore_bullets() -> void:
 func reset() -> void:
 	lives = STARTING_LIVES
 	score = 0
+	bullets = 5
 	lives_changed.emit(lives)
 	score_changed.emit(score)
+	bullets_changed.emit(bullets)
 
 func _on_duck_hit(_duck: Node) -> void:
 	score += 1

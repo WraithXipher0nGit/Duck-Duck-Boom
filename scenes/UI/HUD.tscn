@@ -103,39 +103,3 @@ layout_mode = 2
 size_flags_horizontal = 3
 expand_mode = 3
 stretch_mode = 5
-
-[node name="GameOverOverlay" type="ColorRect" parent="." unique_id=1551929652]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.15294118, 0.15294118, 0.15294118, 0.627451)
-
-[node name="CenterContainer" type="CenterContainer" parent="GameOverOverlay" unique_id=68165072]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -230.0
-offset_top = -57.0
-offset_right = 230.0
-offset_bottom = 57.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="GameOverOverlay/CenterContainer" unique_id=144966719]
-layout_mode = 2
-
-[node name="GameOverLabel" type="Label" parent="GameOverOverlay/CenterContainer/VBoxContainer" unique_id=41609281]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "GAME OVER! YOU SUCK!"
-
-[node name="FinalScoreLabel" type="Label" parent="GameOverOverlay/CenterContainer/VBoxContainer" unique_id=727830894]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Final score: 0"
-horizontal_alignment = 1

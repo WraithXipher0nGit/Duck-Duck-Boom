@@ -20,9 +20,6 @@ extends CanvasLayer
 	$HeartsContainer/VBoxContainer/HBoxContainer2/Bullet5,
 ]
 
-@onready var game_over_overlay: ColorRect = $GameOverOverlay
-@onready var final_score_label: Label = $GameOverOverlay/CenterContainer/VBoxContainer/FinalScoreLabel
-
 
 func _ready() -> void:
 	GameManager.score_changed.connect(_on_score_changed)
@@ -32,7 +29,6 @@ func _ready() -> void:
 	_on_score_changed(GameManager.score)
 	_on_lives_changed(GameManager.lives)
 	_on_bullets_changed(GameManager.bullets)
-	game_over_overlay.visible = false
 
 
 func _on_score_changed(new_score: int) -> void:
@@ -46,9 +42,8 @@ func _on_lives_changed(new_lives: int) -> void:
 			hearts[i].texture = heart_empty
 
 func _on_game_over() -> void:
-	final_score_label.text = "Score: %d" % GameManager.score
-	game_over_overlay.visible = true
-	get_tree().paused = true
+	await get_tree().create_timer(1.0).timeout
+	get_tree().change_scene_to_file("res://scenes/ui/game_over.tscn")
 
 func _on_bullets_changed(new_bullets: int) -> void:
 	for i in bullets.size():
