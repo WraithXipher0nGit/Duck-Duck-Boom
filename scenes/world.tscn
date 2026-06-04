@@ -13,9 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://bcchmjqaq16qx" path="res://dummies/sprites/bullet_HUD.png" id="11_q5onr"]
 [ext_resource type="Texture2D" uid="uid://bg5h5l58rsjww" path="res://dummies/sprites/bullet_HUD_lost.png" id="12_jhx03"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5onr"]
-bg_color = Color(3.6098064e-07, 0.20540455, 0.20540452, 1)
-
 [node name="World" type="Node2D" unique_id=1278491355]
 
 [node name="SpawnGrid" type="Node2D" parent="." unique_id=1050416477]
@@ -53,32 +50,3 @@ heart_full = ExtResource("9_w7kh3")
 heart_empty = ExtResource("10_e3hyu")
 bullet_full = ExtResource("11_q5onr")
 bullet_empty = ExtResource("12_jhx03")
-
-[node name="Restart" type="Button" parent="Hud" unique_id=1555071521]
-custom_minimum_size = Vector2(200, 60)
-offset_left = 736.0
-offset_top = 650.0
-offset_right = 1206.0
-offset_bottom = 775.0
-theme_override_colors/font_color = Color(0.8592249, 0.9219784, 0.4365713, 1)
-theme_override_colors/font_pressed_color = Color(0.30980393, 0.84313726, 0.1882353, 1)
-theme_override_colors/font_hover_color = Color(0.85882354, 0.5411765, 0.16078432, 1)
-theme_override_font_sizes/font_size = 47
-theme_override_styles/normal = SubResource("StyleBoxFlat_q5onr")
-text = "Restart"
-
-[node name="Quit" type="Button" parent="Hud" unique_id=939327897]
-custom_minimum_size = Vector2(200, 60)
-offset_left = 736.0
-offset_top = 835.0
-offset_right = 1206.0
-offset_bottom = 957.0
-theme_override_colors/font_color = Color(0.8592249, 0.9219784, 0.4365713, 1)
-theme_override_colors/font_pressed_color = Color(0.30980393, 0.84313726, 0.1882353, 1)
-theme_override_colors/font_hover_color = Color(0.85882354, 0.5411765, 0.16078432, 1)
-theme_override_font_sizes/font_size = 47
-theme_override_styles/normal = SubResource("StyleBoxFlat_q5onr")
-text = "Quit"
-
-[connection signal="pressed" from="Hud/Restart" to="Hud" method="_on_restart_pressed"]
-[connection signal="pressed" from="Hud/Quit" to="Hud" method="_on_quit_pressed"]

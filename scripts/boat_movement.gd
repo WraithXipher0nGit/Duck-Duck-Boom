@@ -36,7 +36,7 @@ func _on_area_entered(area: Area2D) -> void:
 		EventBus.obstacle_collided.emit(area)
 		print("obstacle collided")
 		area.queue_free()
-#		camera.shake()
+		camera.shake()
 		_start_invulnerability()
 	else:
 		pass
