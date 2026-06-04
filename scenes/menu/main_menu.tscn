@@ -164,3 +164,4 @@ position = Vector2(1335, 704)
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/ExitButton" to="Menu_Player" method="_on_exit_button_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/ExitButton" to="Menu_Player" method="_on_exit_button_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
