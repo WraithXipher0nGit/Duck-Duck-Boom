@@ -6,7 +6,7 @@ extends Node
 @export var wave_height_rows: int = 4
 @export var look_ahead_rows: int = 8
 
-@export var debug_mode: bool = true
+@export var debug_mode: bool = false
 
 var difficulty: float = 1.0
 var difficulty_increase_rate: float = 0.05

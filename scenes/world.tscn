@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://sg0v6c1kjp0n"]
 
-[ext_resource type="Script" uid="uid://33wcv44eoc31" path="res://scripts/spawner.gd" id="1_nnsk1"]
+[ext_resource type="Script" uid="uid://33wcv44eoc31" path="res://scripts/game/spawner.gd" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://b7g0j6bnu20v7" path="res://scenes/player/player.tscn" id="3_71j4m"]
-[ext_resource type="Script" uid="uid://dssvulgta1kge" path="res://scripts/camera_shake.gd" id="3_i7141"]
-[ext_resource type="Script" uid="uid://bg0aymiusnh1u" path="res://scripts/spawn_grid.gd" id="4_qfnet"]
+[ext_resource type="Script" uid="uid://dssvulgta1kge" path="res://scripts/game/camera_shake.gd" id="3_i7141"]
+[ext_resource type="Script" uid="uid://bg0aymiusnh1u" path="res://scripts/game/spawn_grid.gd" id="4_qfnet"]
 [ext_resource type="PackedScene" uid="uid://bhh3uy7k03hgi" path="res://scenes/obstacles/obstacle.tscn" id="5_qfnet"]
 [ext_resource type="PackedScene" uid="uid://dq12gye11cy4i" path="res://scenes/ducks/duck.tscn" id="6_i7141"]
 [ext_resource type="Texture2D" uid="uid://r4nwarjbm1a6" path="res://assets/sprites/Water BG_V2.png" id="7_i7141"]

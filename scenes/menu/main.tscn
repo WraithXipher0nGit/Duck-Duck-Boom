@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://damsloot1atw4"]
 
 [ext_resource type="Texture2D" uid="uid://c5ig1eq3ysvn3" path="res://dummies/sprites/Yellow.png" id="1_7vrkn"]
-[ext_resource type="Script" uid="uid://bea2f4a1n73x5" path="res://scenes/menu/main_menu.gd" id="1_fu7sn"]
+[ext_resource type="Script" uid="uid://bea2f4a1n73x5" path="res://scripts/menus/main_menu.gd" id="1_fu7sn"]
 [ext_resource type="FontFile" uid="uid://0bdloffpmew5" path="res://dummies/fonts/Hello Larry.otf" id="2_fu7sn"]
 [ext_resource type="PackedScene" uid="uid://d23yr8apcwjo0" path="res://scenes/menu/menu_player.tscn" id="4_jix8l"]
 

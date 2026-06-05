@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bhh3uy7k03hgi"]
 
-[ext_resource type="Script" uid="uid://dotradf2bbhot" path="res://scripts/obstacle.gd" id="1_fmab6"]
+[ext_resource type="Script" uid="uid://dotradf2bbhot" path="res://scripts/game/obstacle.gd" id="1_fmab6"]
 [ext_resource type="Texture2D" uid="uid://ccgbq3nd5jd24" path="res://dummies/sprites/obstacle.png" id="1_hof70"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmab6"]

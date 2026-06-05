@@ -7,7 +7,7 @@ const STARTING_BULLETS: int = 5
 var lives: int = STARTING_LIVES
 var bullets: int = STARTING_BULLETS
 var score: int = 0
-var reload_time: float = 3
+var reload_time: float = 0.65
 
 # TODO: implement these for HUD manager later on
 signal lives_changed(new_lives: int)

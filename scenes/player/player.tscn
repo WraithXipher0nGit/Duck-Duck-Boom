@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b7g0j6bnu20v7"]
 
-[ext_resource type="Script" uid="uid://dl0a6bwsi61ak" path="res://scripts/boat_movement.gd" id="1_p47bc"]
+[ext_resource type="Script" uid="uid://dl0a6bwsi61ak" path="res://scripts/game/boat_movement.gd" id="1_p47bc"]
 [ext_resource type="Texture2D" uid="uid://cc6egfscbfi5l" path="res://dummies/sprites/player.png" id="2_75vfm"]
-[ext_resource type="Script" uid="uid://d1j4akd550b67" path="res://scripts/player_shoot.gd" id="3_0owmy"]
+[ext_resource type="Script" uid="uid://d1j4akd550b67" path="res://scripts/game/player_shoot.gd" id="3_0owmy"]
 [ext_resource type="PackedScene" uid="uid://c6t5fdfvvh4sa" path="res://scenes/player/bullet.tscn" id="4_qek5x"]
 [ext_resource type="Texture2D" uid="uid://ejawn8lxce6" path="res://icon.svg" id="5_5gtgg"]
 

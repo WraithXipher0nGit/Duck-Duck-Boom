@@ -6,13 +6,17 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-@export var forward_speed = 300
+
 @export var invulnerable_duration: float = 2.0
+var forward_speed = 300
+var max_forward_speed = 1000
 
 var _is_invulnerable: bool = false
 
 
 func _physics_process(delta: float) -> void:
+	if forward_speed < max_forward_speed:
+		forward_speed += 0.05
 	var direction := Input.get_axis("Left", "Right")
 	if direction:
 		velocity.x = direction * SPEED

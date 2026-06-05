@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://beqvsxvodq0df"]
 
-[ext_resource type="Script" uid="uid://ch60bfck6qml0" path="res://scripts/hud.gd" id="1_5fyfn"]
+[ext_resource type="Script" uid="uid://ch60bfck6qml0" path="res://scripts/game/hud.gd" id="1_5fyfn"]
 [ext_resource type="Texture2D" uid="uid://cvqv8rjekyhoy" path="res://dummies/sprites/heart.png" id="2_7n4fj"]
 
 [node name="Hud" type="CanvasLayer" unique_id=519716865]

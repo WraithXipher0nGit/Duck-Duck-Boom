@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cyc8n2eg6ttmr"]
 
 [ext_resource type="Texture2D" uid="uid://c5ig1eq3ysvn3" path="res://dummies/sprites/Yellow.png" id="1_vop4n"]
-[ext_resource type="Script" uid="uid://bf7yv25ueeon8" path="res://scripts/game_over.gd" id="2_l48yu"]
+[ext_resource type="Script" uid="uid://bf7yv25ueeon8" path="res://scripts/game/game_over.gd" id="2_l48yu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tu1hx"]
 texture = ExtResource("1_vop4n")
