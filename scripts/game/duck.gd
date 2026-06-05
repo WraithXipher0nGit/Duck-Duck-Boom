@@ -1,5 +1,7 @@
 extends Area2D
-@onready var sprite: Sprite2D = $Sprite2D
+@onready var visual: Node2D = $"Duck Sprite"
+@onready var anim_player: AnimationPlayer = $"Duck Sprite/AnimationPlayer"
+@onready var anim_tree: AnimationTree = $"Duck Sprite/AnimationPlayer/AnimationTree"
 
 @export var grid_row: int = 0
 @export var grid_col: int = 0
@@ -7,7 +9,7 @@ extends Area2D
 
 # movement control
 @export var tick_interval: float = 5            
-@export var move_probability_per_tick: float = 0.15
+@export var move_probability_per_tick: float = 1
 @export var max_position_offset: float = 60.0
 @export var min_position_offset: float = 30.0
 
@@ -26,6 +28,7 @@ var _last_offset: Vector2 = Vector2.ZERO
 
 
 func _ready() -> void:
+	anim_tree.active = true
 	if grid == null:
 		push_error("Duck couldn't find spawn_grid")
 		return
@@ -36,7 +39,7 @@ func _ready() -> void:
 	notifier.screen_exited.connect(_on_screen_exited)
 	
 	grid.occupy(grid_row, grid_col, self)
-	# last offset needed to calculate duck sprite hflip
+	# last offset needed to calculate duck visual hflip
 	_last_offset = _random_tile_offset()
 	global_position = grid.tile_to_world(grid_row, grid_col) + _last_offset
 	
@@ -78,20 +81,22 @@ func _start_move(new_row: int, new_col: int) -> void:
 	_is_moving = true
 	grid.occupy(new_row, new_col, self)
 	
+	anim_tree.set("parameters/Swim/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+	
 	var col_delta = new_col - grid_col
 	var new_offset = _random_tile_offset()
 	var target_pos = grid.tile_to_world(new_row, new_col) + new_offset
 	
 	if col_delta < 0:
-		sprite.flip_h = false
+		visual.scale.x = abs(visual.scale.x)
 	elif col_delta > 0:
-		sprite.flip_h = true
+		visual.scale.x = -abs(visual.scale.x)
 	else:
 		var offset_dx = new_offset.x - _last_offset.x
 		if offset_dx < 0:
-			sprite.flip_h = false
+			visual.scale.x = abs(visual.scale.x)
 		elif offset_dx > 0:
-			sprite.flip_h = true
+			visual.scale.x = -abs(visual.scale.x)
 	
 	_last_offset = new_offset
 	

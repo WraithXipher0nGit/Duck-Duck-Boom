@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dq12gye11cy4i"]
 
 [ext_resource type="Script" uid="uid://b6da77emn510b" path="res://scripts/game/duck.gd" id="1_1jmxk"]
-[ext_resource type="Texture2D" uid="uid://clcqpnvkvmqqk" path="res://assets/sprites/Duck Sprites_Muppet_1280x1280_unfinished.png" id="2_1jmxk"]
+[ext_resource type="PackedScene" uid="uid://dg3ii0di4mcvl" path="res://assets/sprites/Basic Duck Sprite/duck_sprite.tscn" id="2_1jmxk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1jmxk"]
 radius = 49.56309
@@ -11,13 +11,14 @@ collision_layer = 2
 collision_mask = 8
 script = ExtResource("1_1jmxk")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1903769529]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_1jmxk")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=811777700]
-position = Vector2(-0.5, 2.5)
+position = Vector2(0, -16)
+scale = Vector2(-1.0702422, 1.1365592)
 shape = SubResource("CircleShape2D_1jmxk")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=161057009]
 show_rect = false
+
+[node name="Duck Sprite" parent="." unique_id=120425166 instance=ExtResource("2_1jmxk")]
+position = Vector2(3.5527137e-15, 5.9604645e-08)
+scale = Vector2(0.1, 0.1)
