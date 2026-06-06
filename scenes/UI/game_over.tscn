@@ -2,6 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://c5ig1eq3ysvn3" path="res://dummies/sprites/Yellow.png" id="1_vop4n"]
 [ext_resource type="Script" uid="uid://bf7yv25ueeon8" path="res://scripts/game/game_over.gd" id="2_l48yu"]
+[ext_resource type="AudioStream" uid="uid://cdebbbcpin8dg" path="res://assets/audio/sfx/UIHover.wav" id="3_r5ffl"]
+[ext_resource type="AudioStream" uid="uid://b8gqeifhcqlmw" path="res://assets/audio/sfx/UIConfirm.wav" id="4_lrum0"]
+[ext_resource type="AudioStream" uid="uid://c06q87pd552wr" path="res://assets/audio/sfx/UIBack.wav" id="5_uw231"]
+[ext_resource type="AudioStream" uid="uid://d3ekg72v35jnp" path="res://assets/audio/music/MainThemeSketch.mp3" id="6_4eny6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tu1hx"]
 texture = ExtResource("1_vop4n")
@@ -60,5 +64,25 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Back to Main Menu"
 
+[node name="UIButtonHover" type="AudioStreamPlayer2D" parent="." unique_id=1842035912]
+position = Vector2(789, 250)
+stream = ExtResource("3_r5ffl")
+
+[node name="UIButtonConfirm" type="AudioStreamPlayer2D" parent="." unique_id=1592563261]
+position = Vector2(789, 250)
+stream = ExtResource("4_lrum0")
+volume_db = 7.984
+
+[node name="UIButtonBack" type="AudioStreamPlayer2D" parent="." unique_id=1079203430]
+position = Vector2(789, 250)
+stream = ExtResource("5_uw231")
+volume_db = 7.945
+
+[node name="MenuMusic" type="AudioStreamPlayer2D" parent="." unique_id=1149929102]
+position = Vector2(789, 250)
+stream = ExtResource("6_4eny6")
+
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/PlayAgainButton" to="." method="_on_play_again_button_mouse_entered"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/BackToMenuButton" to="." method="_on_back_to_menu_button_mouse_entered"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/BackToMenuButton" to="." method="_on_back_to_menu_button_pressed"]
