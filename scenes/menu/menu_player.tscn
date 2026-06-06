@@ -3,7 +3,11 @@
 [ext_resource type="Script" uid="uid://1opjyxxln4fv" path="res://scripts/menus/menu_player.gd" id="1_sivx8"]
 [ext_resource type="Script" uid="uid://tgwh4e23lgj8" path="res://scripts/menus/menu_player_muzzle.gd" id="2_abfv5"]
 [ext_resource type="Texture2D" uid="uid://ejawn8lxce6" path="res://icon.svg" id="4_km6mb"]
+[ext_resource type="AudioStream" uid="uid://cdebbbcpin8dg" path="res://assets/audio/sfx/UIHover.wav" id="5_pcpuu"]
 [ext_resource type="Texture2D" uid="uid://cc6egfscbfi5l" path="res://dummies/sprites/player.png" id="5_v0uok"]
+[ext_resource type="AudioStream" uid="uid://b8gqeifhcqlmw" path="res://assets/audio/sfx/UIConfirm.wav" id="6_u2gek"]
+[ext_resource type="AudioStream" uid="uid://c06q87pd552wr" path="res://assets/audio/sfx/UIBack.wav" id="7_l5joc"]
+[ext_resource type="AudioStream" uid="uid://d3ekg72v35jnp" path="res://assets/audio/music/MainThemeSketch.mp3" id="8_u2gek"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(112, 74)
@@ -46,3 +50,22 @@ position = Vector2(216.00002, 16)
 position = Vector2(-3.8146973e-06, 3.8146973e-06)
 scale = Vector2(1.017578, 1.017578)
 texture = ExtResource("5_v0uok")
+
+[node name="UIButtonHover" type="AudioStreamPlayer2D" parent="." unique_id=1208355209]
+position = Vector2(789, 250)
+stream = ExtResource("5_pcpuu")
+volume_db = 7.576
+
+[node name="UIButtonConfirm" type="AudioStreamPlayer2D" parent="." unique_id=913553748]
+position = Vector2(789, 250)
+stream = ExtResource("6_u2gek")
+volume_db = 7.984
+
+[node name="UIButtonBack" type="AudioStreamPlayer2D" parent="." unique_id=1817037431]
+position = Vector2(789, 250)
+stream = ExtResource("7_l5joc")
+volume_db = 7.945
+
+[node name="MenuMusic" type="AudioStreamPlayer2D" parent="." unique_id=231963926]
+position = Vector2(789, 250)
+stream = ExtResource("8_u2gek")

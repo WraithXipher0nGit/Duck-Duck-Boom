@@ -4,6 +4,10 @@
 [ext_resource type="Script" uid="uid://bea2f4a1n73x5" path="res://scripts/menus/main_menu.gd" id="1_fu7sn"]
 [ext_resource type="FontFile" uid="uid://0bdloffpmew5" path="res://dummies/fonts/Hello Larry.otf" id="2_fu7sn"]
 [ext_resource type="PackedScene" uid="uid://d23yr8apcwjo0" path="res://scenes/menu/menu_player.tscn" id="4_jix8l"]
+[ext_resource type="AudioStream" uid="uid://cdebbbcpin8dg" path="res://assets/audio/sfx/UIHover.wav" id="5_ec7jh"]
+[ext_resource type="AudioStream" uid="uid://b8gqeifhcqlmw" path="res://assets/audio/sfx/UIConfirm.wav" id="6_ijfal"]
+[ext_resource type="AudioStream" uid="uid://c06q87pd552wr" path="res://assets/audio/sfx/UIBack.wav" id="7_iloae"]
+[ext_resource type="AudioStream" uid="uid://dnvvp0e28epk3" path="res://assets/audio/music/MainThemeLoopable.wav" id="8_ijfal"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jix8l"]
 texture = ExtResource("1_7vrkn")
@@ -113,9 +117,31 @@ vertical_alignment = 1
 unique_name_in_owner = true
 position = Vector2(1335, 704)
 
+[node name="UIButtonHover" type="AudioStreamPlayer2D" parent="." unique_id=1266978635]
+position = Vector2(789, 250)
+stream = ExtResource("5_ec7jh")
+
+[node name="UIButtonConfirm" type="AudioStreamPlayer2D" parent="." unique_id=2031360044]
+position = Vector2(789, 250)
+stream = ExtResource("6_ijfal")
+volume_db = 7.984
+
+[node name="UIButtonBack" type="AudioStreamPlayer2D" parent="." unique_id=1493453403]
+position = Vector2(789, 250)
+stream = ExtResource("7_iloae")
+volume_db = 7.945
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=400565073]
+stream = ExtResource("8_ijfal")
+autoplay = true
+
+[connection signal="mouse_entered" from="VBoxContainer/PlayButton" to="." method="_on_play_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/StatsButton" to="." method="_on_stats_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/StatsButton" to="." method="_on_stats_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/EncyclopediaButton" to="." method="_on_encyclopedia_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/EncyclopediaButton" to="." method="_on_encyclopedia_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/ExitButton" to="Menu_Player" method="_on_exit_button_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/ExitButton" to="Menu_Player" method="_on_exit_button_mouse_exited"]
