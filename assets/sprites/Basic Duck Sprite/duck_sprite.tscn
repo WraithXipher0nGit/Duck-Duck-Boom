@@ -368,7 +368,7 @@ filters = ["", "Skeleton2D/Body/Neck/Head:position", "Skeleton2D/Body/Neck/Head:
 animation = &"swimming"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_tahv5"]
-graph_offset = Vector2(-1152, 67)
+graph_offset = Vector2(-720.28467, -51.658997)
 nodes/Swimming/node = SubResource("AnimationNodeAnimation_4mkqp")
 nodes/Swimming/position = Vector2(-300, 400)
 nodes/Swim/node = SubResource("AnimationNodeOneShot_xv1bf")

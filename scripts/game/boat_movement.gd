@@ -8,7 +8,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 @export var invulnerable_duration: float = 2.0
-var forward_speed = 300
+var forward_speed = 50
 var max_forward_speed = 850
 
 var _is_invulnerable: bool = false

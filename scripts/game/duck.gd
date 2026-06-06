@@ -111,6 +111,7 @@ func _start_move(new_row: int, new_col: int) -> void:
 
 
 func _finish_move(new_row: int, new_col: int) -> void:
+	anim_tree.set("parameters/Swim/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT)
 	grid.vacate(grid_row, grid_col)
 	grid_row = new_row
 	grid_col = new_col
