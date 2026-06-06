@@ -3,16 +3,24 @@ extends Node
 const STARTING_LIVES: int = 3
 const STARTING_BULLETS: int = 5
 
+@export var powerup_duration: float = 5.0
+
+var _powerup_timer: Timer
+
 
 var lives: int = STARTING_LIVES
 var bullets: int = STARTING_BULLETS
 var score: int = 0
 var reload_time: float = 0.65
+var has_powerup: bool = false
+var current_powerup = null
 
 # TODO: implement these for HUD manager later on
 signal lives_changed(new_lives: int)
 signal score_changed(new_score: int)
 signal bullets_changed(new_bullets: int)
+signal powerup_acquired(powerup_name)
+signal powerup_lost()
 
 func _ready() -> void:
 	EventBus.duck_hit.connect(_on_duck_hit)
@@ -20,6 +28,14 @@ func _ready() -> void:
 	EventBus.obstacle_collided.connect(_on_obstacle_collided)
 	EventBus.game_restarted.connect(reset)
 	EventBus.player_shot.connect(_on_player_shot)
+	EventBus.powerup_acquired.connect(_on_powerup_acquired)
+	EventBus.powerup_lost.connect(_on_powerup_lost)
+	
+	_powerup_timer = Timer.new()
+	_powerup_timer.wait_time = powerup_duration
+	_powerup_timer.one_shot = true
+	_powerup_timer.timeout.connect(_on_powerup_expired)
+	add_child(_powerup_timer)
 	
 
 func _lose_life() -> void:
@@ -47,7 +63,10 @@ func reset() -> void:
 	bullets_changed.emit(bullets)
 
 func _on_duck_hit(_duck: Node) -> void:
-	score += 1
+	if current_powerup == "double_score":
+		score += 2
+	else:
+		score += 1
 	score_changed.emit(score)
 
 func _on_duck_missed(_duck: Node):
@@ -65,3 +84,20 @@ func _reload():
 	await get_tree().create_timer(reload_time).timeout
 	_restore_bullets()
 	EventBus.reloaded.emit()
+
+func _on_powerup_lost():
+	if not has_powerup:
+		return
+	has_powerup = false
+	current_powerup = null
+	_powerup_timer.stop()
+	powerup_lost.emit()
+
+func _on_powerup_acquired(powerup_name):
+	has_powerup = true
+	current_powerup = powerup_name
+	_powerup_timer.start(powerup_duration)
+	powerup_acquired.emit(powerup_name)
+
+func _on_powerup_expired():
+	_on_powerup_lost()

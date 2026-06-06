@@ -5,6 +5,9 @@ extends CanvasLayer
 @export var bullet_full: Texture2D
 @export var bullet_empty: Texture2D
 
+@export var spread_shot_icon: Texture2D
+@export var double_score_icon: Texture2D
+
 @onready var score_label: Label = $ScoreContainer/ScoreLabel
 @onready var hearts: Array = [
 	$HeartsContainer/VBoxContainer/HBoxContainer/Heart1,
@@ -20,6 +23,8 @@ extends CanvasLayer
 	$HeartsContainer/VBoxContainer/HBoxContainer2/Bullet5,
 ]
 
+@onready var powerup_icon = $PowerupIndicatorContainer/TextureRect
+
 
 func _ready() -> void:
 	GameManager.score_changed.connect(_on_score_changed)
@@ -29,6 +34,9 @@ func _ready() -> void:
 	_on_score_changed(GameManager.score)
 	_on_lives_changed(GameManager.lives)
 	_on_bullets_changed(GameManager.bullets)
+	
+	GameManager.powerup_acquired.connect(_on_powerup_acquired)
+	GameManager.powerup_lost.connect(_on_powerup_lost)
 
 
 func _on_score_changed(new_score: int) -> void:
@@ -51,3 +59,17 @@ func _on_bullets_changed(new_bullets: int) -> void:
 			bullets[i].texture = bullet_full
 		else:
 			bullets[i].texture = bullet_empty
+
+func _on_powerup_lost():
+	powerup_icon.visible = false
+
+func _on_powerup_acquired(powerup_name):
+	powerup_icon.visible = true
+	match powerup_name:
+		"spread_shot":
+			powerup_icon.texture = spread_shot_icon
+		"double_score":
+			powerup_icon.texture = double_score_icon
+		_:
+			push_warning("Unknown powerup")
+			return

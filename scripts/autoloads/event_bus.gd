@@ -22,3 +22,7 @@ signal game_restarted
 signal score_changed(score)
 
 signal reloaded
+
+signal powerup_acquired(powerup_name)
+
+signal powerup_lost

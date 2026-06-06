@@ -8,7 +8,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 @export var invulnerable_duration: float = 2.0
-var forward_speed = 50
+var forward_speed = 300
 var max_forward_speed = 850
 
 var _is_invulnerable: bool = false
@@ -16,7 +16,7 @@ var _is_invulnerable: bool = false
 
 func _physics_process(delta: float) -> void:
 	if forward_speed < max_forward_speed:
-		forward_speed += 0.05
+		forward_speed += 0.03
 	var direction := Input.get_axis("Left", "Right")
 	if direction:
 		velocity.x = direction * SPEED
@@ -31,6 +31,7 @@ func _physics_process(delta: float) -> void:
 
 func _ready() -> void:
 	hitbox.area_entered.connect(_on_area_entered)
+	_test_powerups()
 
 
 func _on_area_entered(area: Area2D) -> void:
@@ -57,3 +58,12 @@ func _start_invulnerability() -> void:
 	
 	_is_invulnerable = false
 	sprites.modulate.a = 1.0
+
+func _test_powerups():
+	await get_tree().create_timer(5.0).timeout
+	print("Giving powerup 1")
+	EventBus.powerup_acquired.emit("spread_shot")
+	
+	await get_tree().create_timer(10.0).timeout
+	print("Giving powerup 2")
+	EventBus.powerup_acquired.emit("double_score")

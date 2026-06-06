@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dsroeh0hh1vt7" path="res://dummies/sprites/heart_lost.png" id="10_e3hyu"]
 [ext_resource type="Texture2D" uid="uid://bcchmjqaq16qx" path="res://dummies/sprites/bullet_HUD.png" id="11_q5onr"]
 [ext_resource type="Texture2D" uid="uid://bg5h5l58rsjww" path="res://dummies/sprites/bullet_HUD_lost.png" id="12_jhx03"]
+[ext_resource type="Texture2D" uid="uid://bx1rrxckxgywe" path="res://dummies/sprites/powerup_spread_shot.png" id="13_o8fc1"]
+[ext_resource type="Texture2D" uid="uid://qp2ssixvtt42" path="res://dummies/sprites/powerup_double_score.png" id="14_xo05s"]
 
 [node name="World" type="Node2D" unique_id=1278491355]
 
@@ -50,3 +52,5 @@ heart_full = ExtResource("9_w7kh3")
 heart_empty = ExtResource("10_e3hyu")
 bullet_full = ExtResource("11_q5onr")
 bullet_empty = ExtResource("12_jhx03")
+spread_shot_icon = ExtResource("13_o8fc1")
+double_score_icon = ExtResource("14_xo05s")
