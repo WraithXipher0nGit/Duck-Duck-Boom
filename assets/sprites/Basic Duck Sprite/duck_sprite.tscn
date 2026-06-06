@@ -362,12 +362,13 @@ animation = &"Quack"
 
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_xv1bf"]
 filter_enabled = true
+filters = ["", "Skeleton2D/Body/Neck/Head:position", "Skeleton2D/Body/Neck/Head:rotation", "Skeleton2D/Body/Neck/Mouth:position", "Skeleton2D/Body/Neck/Mouth:rotation", "Skeleton2D/Body/Neck:position", "Skeleton2D/Body/Neck:rotation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4mkqp"]
 animation = &"swimming"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_tahv5"]
-graph_offset = Vector2(-670.0783, 78.394844)
+graph_offset = Vector2(-1152, 67)
 nodes/Swimming/node = SubResource("AnimationNodeAnimation_4mkqp")
 nodes/Swimming/position = Vector2(-300, 400)
 nodes/Swim/node = SubResource("AnimationNodeOneShot_xv1bf")
@@ -375,7 +376,7 @@ nodes/Swim/position = Vector2(-20, 100)
 nodes/Quak/node = SubResource("AnimationNodeAnimation_w1vi0")
 nodes/Quak/position = Vector2(-960, 480)
 nodes/Idle/node = SubResource("AnimationNodeAnimation_io3ut")
-nodes/Idle/position = Vector2(-980, 220)
+nodes/Idle/position = Vector2(-1120, 180)
 nodes/Quack/node = SubResource("AnimationNodeOneShot_tx7lv")
 nodes/Quack/position = Vector2(-740, 160)
 nodes/Laugh/node = SubResource("AnimationNodeOneShot_l1hvt")
@@ -440,7 +441,7 @@ position = Vector2(-627, -852)
 [node name="Body" type="Bone2D" parent="Skeleton2D" unique_id=1179940180]
 position = Vector2(1019.00006, 872.9999)
 rotation = -1.319439
-scale = Vector2(0.9999998, 0.9999998)
+scale = Vector2(0.99999976, 0.99999976)
 rest = Transform2D(0.2487188, -0.96857566, 0.96857566, 0.2487188, 1019.00006, 872.9999)
 auto_calculate_length_and_angle = false
 length = 600.0
