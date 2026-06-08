@@ -14,8 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://bg5h5l58rsjww" path="res://dummies/sprites/bullet_HUD_lost.png" id="12_jhx03"]
 [ext_resource type="Texture2D" uid="uid://bx1rrxckxgywe" path="res://dummies/sprites/powerup_spread_shot.png" id="13_o8fc1"]
 [ext_resource type="Texture2D" uid="uid://qp2ssixvtt42" path="res://dummies/sprites/powerup_double_score.png" id="14_xo05s"]
+[ext_resource type="AudioStream" uid="uid://dqc81da61u4qa" path="res://assets/audio/sfx/AmbienceTrack1.wav" id="15_xo05s"]
 
-[node name="World" type="Node2D" unique_id=1278491355]
+[node name="AudioStreamPlayer" type="Node2D" unique_id=1278491355]
 
 [node name="SpawnGrid" type="Node2D" parent="." unique_id=1050416477]
 script = ExtResource("4_qfnet")
@@ -54,3 +55,8 @@ bullet_full = ExtResource("11_q5onr")
 bullet_empty = ExtResource("12_jhx03")
 spread_shot_icon = ExtResource("13_o8fc1")
 double_score_icon = ExtResource("14_xo05s")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2091939895]
+stream = ExtResource("15_xo05s")
+volume_db = -14.448
+autoplay = true
